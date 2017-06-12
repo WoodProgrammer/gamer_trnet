@@ -6,5 +6,5 @@ from django.conf.urls.static import static
 app_name="game"
 
 urlpatterns=[
-
+    url(r"^",views.IndexView,name="index")
 ]
