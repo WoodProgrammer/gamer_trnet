@@ -10,12 +10,19 @@
 
 
 {% for game in all_game %}
-<h1>{{game.name}}</h1>
+<a href="{% url 'game:detail' game.id %}"> <h1>{{game.name}}</h1></a>
 <h2>{{game.game_price}}</h2>
 <h3>{{game.genre}}</h3>
 <h4>{{game.created_date}}</h4>
-<h5>{{game.photo.url}}</h5>
+<h4>{{game.update_date}}</h4>
+
+{% if game.photo %}
 <img src="{{game.photo.url}}">
+{% endif %}
+{% if request.user.is_superuser %}
+<a href="{% url 'game:delete' game.id %}">Delete</a>
+<a href="{% url 'game:update' game.id %}">Update</a>
+{% endif %}
 {% endfor %}
 </body>
 </html>

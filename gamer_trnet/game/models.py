@@ -10,9 +10,12 @@ class Game(models.Model):
     game_price =models.FloatField(default=0)
     genre = models.CharField(max_length=15)
     created_date = models.DateTimeField(auto_now_add=True)
-    photo = models.ImageField(upload_to="photo")
-
+    photo = models.ImageField(blank=True)
+    update_date = models.DateTimeField(auto_now_add=True)
     def __unicode__(self):
         return self.name
+
+    class Meta:
+        ordering = ["-update_date"]
 
 
