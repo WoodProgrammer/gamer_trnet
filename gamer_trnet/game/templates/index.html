@@ -12,7 +12,6 @@
 {% for game in all_game %}
 <a href="{% url 'game:detail' game.id %}"> <h1>{{game.name}}</h1></a>
 <h2>{{game.game_price}}</h2>
-<h3>{{game.genre}}</h3>
 <h4>{{game.created_date}}</h4>
 <h4>{{game.update_date}}</h4>
 

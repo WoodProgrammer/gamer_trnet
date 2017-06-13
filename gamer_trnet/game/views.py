@@ -48,7 +48,7 @@ def DeleteView(request, id):
     if not request.user.is_superuser:
         return redirect("game:index")
     try:
-        game = get_object_or_404(Game, id=id).delete()
+        get_object_or_404(Game, id=id).delete()
         return redirect("game:index")
     except:
         raise "Error"

@@ -22,3 +22,4 @@ def login_view(request):
         else:
             return render(request,template_name, {'error_message': 'Invalid login'})
     return render(request, template_name)
+
