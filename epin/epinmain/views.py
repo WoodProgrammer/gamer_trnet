@@ -18,18 +18,23 @@ def games(request):
 def login(request):
     c = {}
     c.update(csrf(request))
+
+
     return render_to_response('login.html',c)##look to the source code.
 
 def auth_view(request):
     username = request.POST.get('username','')
     password = request.POST.get('password','')
     user = auth.authenticate(username=username,password=password)
+
     if user is not None:
         auth.login(request,user)
+        request.session['login_status'] = True
         return HttpResponseRedirect('/accounts/loggedin')
     else:
         return HttpResponseRedirect('/accounts/invalid')##Javascript ile bir hareket cekicez.
 def loggedin(request):
+
     return render_to_response('loggedin.html',{'full_name':request.user.username})
 def logout(request):
     auth.logout(request)

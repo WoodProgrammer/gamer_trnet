@@ -1,2 +1,7 @@
-<p2>Hi {{full_name}} </p2>
-<a href="/accounts/logout">For Logout</a>
+{% if user.is_authenticated %}
+    <p2>Hi {{full_name}} </p2>
+    <a href="/accounts/logout">For Logout</a>
+{%else%}
+    <p1>Hi! Join Us :)) </p1>
+    <a href="/accounts/signup">SignUp</a>
+{%endif%}
