@@ -9,6 +9,19 @@ from django.contrib.auth.models import User
 import json
 
 
+def shop(request):
+    if request.user.is_authenticated():
+        return render_to_response('create_cart.html')
+    else:
+        return render_to_response('login.html')
+def create_cart(request):
+
+    pass
+
+
+
+
+
 def games(request):
     if request.user.is_authenticated():
         print("Hello")

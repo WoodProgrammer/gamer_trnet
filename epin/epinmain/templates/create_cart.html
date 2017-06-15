@@ -1,0 +1,11 @@
+<h1>Shopping Page</h1>
+{%if form.errors%}
+<p>error!</p>
+{%endif%}
+<form action="/accounts/auth/" method="post" >{%csrf_token%}
+    Username:<br>
+    <input type="text" name="username" id="username">   </input>
+    Password:<br>
+    <input type="password" name="password" id="password">   </input>
+    <input type="submit" value="login">   </input>
+</form>
