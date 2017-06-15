@@ -1,0 +1,19 @@
+<h1>SignUp Page</h1>
+{%if form.errors%}
+<p>error!</p>
+{%endif%}
+<form action="/accounts/createaccounts/" method="post" >{%csrf_token%}
+
+     Name:<br>
+    <input type="text" name="name" id="username">   </input>
+    Surname:<br>
+    <input type="password" name="surname" id="password">   </input>
+    Email:<br>
+    <input type="email" name="email" id="password">   </input>
+
+    Username:<br>
+    <input type="text" name="username" id="username">   </input>
+    Password:<br>
+    <input type="password" name="password" id="password">   </input>
+    <input type="submit" value="SignUp">   </input>
+</form>

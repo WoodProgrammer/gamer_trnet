@@ -2,6 +2,7 @@ from django.shortcuts import render,render_to_response
 from django.http import HttpResponseRedirect
 from django.contrib import auth
 from django.template.context_processors import csrf
+from .models import Profile
 
 import json
 
@@ -24,3 +25,18 @@ def loggedin(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/accounts/login')
+
+def signup(request):
+    c = {}
+    c.update(csrf(request))
+    return render_to_response('signup.html',c)
+
+
+def createaccounts(request):
+    name = request.POST.get('name', '')
+    surname = request.POST.get('surname', '')
+    username = request.POST.get('username','')
+    email = request.POST.get('password', '')
+    password = request.POST.get('password', '')
+    Profile.create()
+
