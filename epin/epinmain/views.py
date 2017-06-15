@@ -13,7 +13,7 @@ def shop(request):
     if request.user.is_authenticated():
         return render_to_response('create_cart.html')
     else:
-        return render_to_response('login.html')
+        return HttpResponseRedirect('/accounts/login')
 def create_cart(request):
 
     pass
