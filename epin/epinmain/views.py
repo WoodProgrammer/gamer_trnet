@@ -1,10 +1,18 @@
 from django.shortcuts import render,render_to_response
 from django.http import HttpResponseRedirect
+from django.http import HttpResponse
 from django.contrib import auth
 from django.template.context_processors import csrf
-from .models import Profile
+from .models import Profile,Game
 
 import json
+
+
+def games(request):
+    return render_to_response('games.html',{'games':Game.objects.all()})
+
+
+
 
 def login(request):
     c = {}
@@ -38,5 +46,5 @@ def createaccounts(request):
     username = request.POST.get('username','')
     email = request.POST.get('password', '')
     password = request.POST.get('password', '')
-    Profile.create()
+    return 1
 
