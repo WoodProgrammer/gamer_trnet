@@ -11,8 +11,7 @@ class Profile(models.Model):
     birth_date = models.DateField(null=True, blank=True)
     status = models.BooleanField(default = True)
     def __str__(self):
-        return self.user
-
+        return self.user.username
 class Game(models.Model):
     name = models.CharField(max_length=225)
     game_pin_price = models.FloatField(default = 0)
