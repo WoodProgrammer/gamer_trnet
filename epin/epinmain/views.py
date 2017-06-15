@@ -10,10 +10,11 @@ import json
 
 
 def games(request):
-    return render_to_response('games.html',{'games':Game.objects.all()})
-
-
-
+    if request.user.is_authenticated():
+        print("Hello")
+        return render_to_response('games.html',{'games':Game.objects.all()})
+    else:
+        return render_to_response('joinus.html')
 
 def login(request):
     c = {}

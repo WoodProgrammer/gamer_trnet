@@ -4,5 +4,4 @@ app_name = 'epinmain'
 urlpatterns = [
     url(r'^games/$', views.games,name= 'login'),
 
-
 ]
