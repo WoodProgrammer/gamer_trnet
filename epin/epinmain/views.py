@@ -21,3 +21,6 @@ def auth_view(request):
         return HttpResponseRedirect('/accounts/invalid')##Javascript ile bir hareket cekicez.
 def loggedin(request):
     return render_to_response('loggedin.html',{'full_name':request.user.username})
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/accounts/login')
