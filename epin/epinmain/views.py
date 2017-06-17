@@ -16,7 +16,7 @@ def shop(request):
     if request.user.is_authenticated():
         c = {}
         c.update(csrf(request))
-        return render_to_response('create_cart.html',c)
+        return render(request,'create_cart.html')
     else:
         return HttpResponseRedirect('/accounts/login/')
 
@@ -25,17 +25,22 @@ def cart_status(request):
     c.update(csrf(request))
     s = SessionStore(session_key='343141')
 
-    s['count']=45
+    s['count']=42
     s['cart_id']=343141
     s['game_name']="CallOfDutyModernWarfare4"
-    s.save()
     key = s.session_key
+
+    main_obj = Session.objects.get(pk="{}".format(key))
+    print main_obj.get_decoded()
+    '''  
     print(key)
-    s_new = Session.objects.get(pk=key)
-    print(s_new.get_decoded())
+    s_new = Session.objects.all()
+    main_obj = Session.objects.get(pk="yanpfk3nxcx4x214z3n7j5rfnuk8oma8")
+    print(main_obj.get_decoded())
 
+    
+    '''
     return render_to_response('index.html')
-
 
 def games(request):
     if request.user.is_authenticated():
