@@ -6,6 +6,7 @@ from django.template.context_processors import csrf
 from .models import Profile,Game
 from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
+from django.contrib.sessions.backends.db import SessionStore
 
 import json
 
@@ -22,20 +23,20 @@ def shop(request):
 def cart_status(request):
     c = {}
     c.update(csrf(request))
-    count_from_form = request.POST.get('count')
-    count = request.session.get('count',count_from_form)
-    request.session['game'] = count
-    request.session.modified = True
+    s = SessionStore()
+    s['count']=45
+    s.save()
+    key = s.session_key
+    s_new = Session.objects.get()
 
-    for i in request.session():
-         print(i)
+    print(s_new.get_decoded())
     return render_to_response('index.html')
 
 
 def games(request):
     if request.user.is_authenticated():
         print("Hello")
-        return render_to_response('games.html',{'games':Game.objects.all()})
+        return render(request,'index.html')
     else:
         return render_to_response('joinus.html')
 
