@@ -23,13 +23,17 @@ def shop(request):
 def cart_status(request):
     c = {}
     c.update(csrf(request))
-    s = SessionStore()
+    s = SessionStore(session_key='343141')
+
     s['count']=45
+    s['cart_id']=343141
+    s['game_name']="CallOfDutyModernWarfare4"
     s.save()
     key = s.session_key
-    s_new = Session.objects.get()
-
+    print(key)
+    s_new = Session.objects.get(pk=key)
     print(s_new.get_decoded())
+
     return render_to_response('index.html')
 
 
