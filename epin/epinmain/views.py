@@ -22,32 +22,26 @@ def shop(request):
 
 def cart_status(request):
     c = {}
+
+    count = int(request.session["count"])
     c.update(csrf(request))
-    s = SessionStore(session_key='343141')
+    request.session["username"] = request.user.username
+    request.session["game"] = request.POST.get("game")
+    request.session["count"] += request.POST.get("count")
 
-    s['count']=42
-    s['cart_id']=343141
-    s['game_name']="CallOfDutyModernWarfare4"
-    key = s.session_key
+    print(request.session['count'])
 
-    main_obj = Session.objects.get(pk="{}".format(key))
-    print main_obj.get_decoded()
-    '''  
-    print(key)
-    s_new = Session.objects.all()
-    main_obj = Session.objects.get(pk="yanpfk3nxcx4x214z3n7j5rfnuk8oma8")
-    print(main_obj.get_decoded())
-
-    
-    '''
-    return render_to_response('index.html')
-
+    return HttpResponseRedirect('games/games')
 def games(request):
+
+    print (request.session["count"])
     if request.user.is_authenticated():
+        cart = request.session.get('cart', {})
         print("Hello")
-        return render(request,'index.html')
+        return render_to_response('index.html',{'test_data':cart})
     else:
         return render_to_response('joinus.html')
+
 
 def login(request):
     c = {}
