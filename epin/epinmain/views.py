@@ -5,21 +5,31 @@ from django.contrib import auth
 from django.template.context_processors import csrf
 from .models import Profile,Game
 from django.contrib.auth.models import User
+from django.contrib.sessions.models import Session
 
 import json
 
 
 def shop(request):
+
     if request.user.is_authenticated():
-        return render_to_response('create_cart.html')
+        c = {}
+        c.update(csrf(request))
+        return render_to_response('create_cart.html',c)
     else:
-        return HttpResponseRedirect('/accounts/login')
-def create_cart(request):
+        return HttpResponseRedirect('/accounts/login/')
 
-    pass
+def cart_status(request):
+    c = {}
+    c.update(csrf(request))
+    count_from_form = request.POST.get('count')
+    count = request.session.get('count',count_from_form)
+    request.session['game'] = count
+    request.session.modified = True
 
-
-
+    for i in request.session():
+         print(i)
+    return render_to_response('index.html')
 
 
 def games(request):
@@ -44,9 +54,9 @@ def auth_view(request):
     if user is not None:
         auth.login(request,user)
         request.session['login_status'] = True
-        return HttpResponseRedirect('/accounts/loggedin')
+        return HttpResponseRedirect('/accounts/loggedin/')
     else:
-        return HttpResponseRedirect('/accounts/invalid')##Javascript ile bir hareket cekicez.
+        return HttpResponseRedirect('/accounts/invalid/')##Javascript ile bir hareket cekicez.
 def loggedin(request):
 
     return render_to_response('loggedin.html',{'full_name':request.user.username})
@@ -72,4 +82,4 @@ def createaccounts(request):
     user_obj.save()
     profile_data = Profile.objects.create(user=user_obj)
     profile_data.birth_date="2010-12-23"
-    return HttpResponseRedirect('/games/games')
+    return HttpResponseRedirect('/games/games/')
