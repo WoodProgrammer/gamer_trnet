@@ -30,7 +30,10 @@ def cart_status(request):
     except Exception as e:
         request.session["game"] =' '
         request.session["count"] =' '
+        request.session["game"] += ',' + request.POST.get("game")
+        request.session["count"] += ',' + request.POST.get("count")
 
+        
     print(request.session["game"])
     print(request.session["count"]) # marshalling
 
