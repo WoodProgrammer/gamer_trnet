@@ -22,24 +22,22 @@ def shop(request):
 
 def cart_status(request):
     c = {}
-    count=[]
-    c.update(csrf(request))
-
-
-    count = int(request.session["count"])
     request.session["username"] = request.user.username
-    request.session["game"] = request.POST.get("game")
-    request.session["count"] += ','+str(request.POST.get("count"))
+    c.update(csrf(request))
+    try:
+        request.session["game"] += ',' + request.POST.get("game")
+        request.session["count"] += ',' + request.POST.get("count")
+    except Exception as e:
+        request.session["game"] =' '
+        request.session["count"] =' '
 
-
-    print(request.session["count"])
-
+    print(request.session["game"])
+    print(request.session["count"]) # marshalling
 
 
     return HttpResponseRedirect('games/games')
 def games(request):
 
-    print (request.session["count"])
     if request.user.is_authenticated():
         cart = request.session.get('cart', {})
         print("Hello")
