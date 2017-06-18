@@ -13,13 +13,19 @@ import json
 
 
 def json_converter(keys,values):
-  all_datas = []
-  for i in range(len(keys)):
-    data_template  = "'{}':'{}'".format(keys[i],values[i])
-    main_template = "{"+data_template+"}"
-    all_datas.append(main_template)
 
-  return all_datas
+  main_template =''
+  for i in range(len(keys)):
+    data_template  = ' "{}":"{}"'.format(keys[i],values[i])
+    if (i == len(keys)-1) :
+      main_template += data_template
+    else:
+      main_template += data_template + ","
+
+  return "{"+main_template+"}"
+
+
+
 
 def shop(request):
 
