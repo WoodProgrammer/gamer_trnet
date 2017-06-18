@@ -35,7 +35,7 @@ def cart_status(request):
     print(request.session["count"]) # marshalling
 
 
-    return HttpResponseRedirect('games/games')
+    return render_to_response('games.html',{'games':request.session["game"],'counts':request.session["count"]})
 def games(request):
 
     if request.user.is_authenticated():
