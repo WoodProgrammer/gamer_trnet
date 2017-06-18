@@ -11,6 +11,16 @@ from django.contrib.sessions.backends.db import SessionStore
 import json
 
 
+
+def json_converter(keys,values):
+  all_datas = []
+  for i in range(len(keys)):
+    data_template  = "'{}':'{}'".format(keys[i],values[i])
+    main_template = "{"+data_template+"}"
+    all_datas.append(main_template)
+
+  return all_datas
+
 def shop(request):
 
     if request.user.is_authenticated():
@@ -33,18 +43,27 @@ def cart_status(request):
         request.session["game"] += ',' + request.POST.get("game")
         request.session["count"] += ',' + request.POST.get("count")
 
-        
-    print(request.session["game"])
-    print(request.session["count"]) # marshalling
+    print(request.session['game'])
+    #### marshalling
+
+    return HttpResponseRedirect('games/games/')
 
 
-    return render_to_response('games.html',{'games':request.session["game"],'counts':request.session["count"]})
+
+
+
 def games(request):
 
     if request.user.is_authenticated():
         cart = request.session.get('cart', {})
-        print("Hello")
-        return render_to_response('index.html',{'test_data':cart})
+        my_keys = request.session['game']
+        my_vals = request.session['count']
+        print(str(request.session['count']))
+        print(my_vals.split(','))
+
+
+
+        return render_to_response('index.html',{'cart_datas':json_converter(my_keys.split(','),my_vals.split(','))})
     else:
         return render_to_response('joinus.html')
 
