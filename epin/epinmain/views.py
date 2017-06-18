@@ -22,14 +22,19 @@ def shop(request):
 
 def cart_status(request):
     c = {}
+    count=[]
+    c.update(csrf(request))
+
 
     count = int(request.session["count"])
-    c.update(csrf(request))
     request.session["username"] = request.user.username
     request.session["game"] = request.POST.get("game")
-    request.session["count"] += request.POST.get("count")
+    request.session["count"] += ','+str(request.POST.get("count"))
 
-    print(request.session['count'])
+
+    print(request.session["count"])
+
+
 
     return HttpResponseRedirect('games/games')
 def games(request):
