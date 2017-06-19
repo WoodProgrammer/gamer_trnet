@@ -1,22 +1,19 @@
 
 
-from django.db import connections
+import psycopg2
 
-
-sample_game_datas = {'mw3':'12','minecraft':'23','doom3':'43'}
-
-def get_amount():
-    price_json = {}
-    my_json = { " ":" ", "":"", "mw3":"12", "mw2":"15", "minecraft":"122"}
-
-    for price in sample_game_datas:
-        try:
-            price_json[price] = int(my_json[price]) * int(sample_game_datas[price])
-        except:
-            pass
-
-    return price_json
+connect_str = "dbname='epin_test' user='emirozbir' host='localhost' " + \
+              "password=' '"
+conn = psycopg2.connect(connect_str)
+cursor = conn.cursor()
+x = cursor.execute("SELECT id,game_pin_price FROM epinmain_game")
+game_datas = cursor.fetchall()
+for i in range(3):
+    k=0
+    try:
+        print("{}".format(i) +" "+ str(game_datas[i][k+1]))
+    except:
+        pass
 
 
 
-print(get_amount())
