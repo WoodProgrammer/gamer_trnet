@@ -18,37 +18,42 @@ def json_converter(keys,values):
 
 
 import psycopg2
-
-game_json = {}
-connect_str = "dbname='epin_test' user='emirozbir' host='localhost' " + \
-              "password=' '"
-conn = psycopg2.connect(connect_str)
-cursor = conn.cursor()
-x = cursor.execute("SELECT name,game_pin_price FROM epinmain_game")
-game_datas = cursor.fetchall()
-
-
-game_names = []
-game_prices = []
-data = {}
-for i in range(3):
-    k=0
-    try:
-       game_names.append(game_datas[i][k])
-       game_prices.append(game_datas[i][k+1])
-    except:
-        pass
-
-game_data_from_db= json_converter(game_names,game_prices)
-
-game_json = json.loads(game_data_from_db)
+def add_sale_to_the_sale_table():
+    game_json = {}
+    connect_str = "dbname='epin_test' user='emirozbir' host='localhost' " + \
+                  "password=' '"
+    conn = psycopg2.connect(connect_str)
+    cursor = conn.cursor()
+    x = cursor.execute("SELECT name,game_pin_price FROM epinmain_game")
+    game_datas = cursor.fetchall()
 
 
-customer_test_data = { "mw3":"23", "mw2":"68"}
+    game_names = []
+    game_prices = []
+    data = {}
+    for i in range(3):
+        k=0
+        try:
+           game_names.append(game_datas[i][k])
+           game_prices.append(game_datas[i][k+1])
+        except:
+            pass
 
-for i in customer_test_data.keys():
+    game_data_from_db= json_converter(game_names,game_prices)
 
-         amount = float(game_json[i]) * float(customer_test_data[i])
-         cursor.execute('''
-         INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{});'''.format(amount,1,1))
-         conn.commit()
+    game_json = json.loads(game_data_from_db)
+
+
+
+
+    for i in customer_test_data.keys():
+
+             amount = float(game_json[i]) * float(customer_test_data[i])
+             cursor.execute('''
+             INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{});'''.format(amount,1,1))
+             conn.commit()
+
+
+
+
+add_sale_to_the_sale_table()
