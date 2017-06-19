@@ -44,12 +44,11 @@ game_data_from_db= json_converter(game_names,game_prices)
 game_json = json.loads(game_data_from_db)
 
 
-
-
-
 customer_test_data = { "mw3":"23", "mw2":"68"}
 
 for i in customer_test_data.keys():
 
-
-        print( "bu oyuna >>> {}".format(i) + " " +  str(float(game_json[i]) * float(customer_test_data[i])))
+         amount = float(game_json[i]) * float(customer_test_data[i])
+         cursor.execute('''
+         INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{});'''.format(amount,1,1))
+         conn.commit()
