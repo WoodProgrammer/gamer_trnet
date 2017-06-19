@@ -102,13 +102,22 @@ def signup(request):
     return render_to_response('signup.html',c)
 
 
+def get_amount(cart_datas,username):
+    user_balance = User.objects.filter(username=username)
+    ###Games Tablosundaki amount alınacak db'de yoksa exception verilecek.
+    ###User tablosundan çekilecek.
+    return 1
+
 def sale_finish(request):
     my_keys = request.session['game']
     my_vals = request.session['count']
+    username = request.user
 
     cart_datas =  json_converter(my_keys.split(','), my_vals.split(','))
+    amount = get_amount(cart_datas,username)
 
-    return render_to_response('finish_sale.html',{'cart_data':cart_datas})
+
+    return render_to_response('finish_sale.html',{'cart_data':username})
 
 
 
