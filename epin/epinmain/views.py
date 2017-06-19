@@ -102,12 +102,16 @@ def auth_view(request):
 
 cursor = connections['alias'].cursor()
 
-def add_sale_to_the_sale_table(cart_data):
-    game_json = {}
+def add_sale_to_the_sale_table(cart_data,user_id):
     connect_str = "dbname='epin_test' user='emirozbir' host='localhost' " + \
                   "password=' '"
     conn = psycopg2.connect(connect_str)
     cursor = conn.cursor()
+
+
+
+    game_json = {}
+
     x = cursor.execute("SELECT name,game_pin_price FROM epinmain_game")
     game_datas = cursor.fetchall()
 
@@ -138,7 +142,8 @@ def add_sale_to_the_sale_table(cart_data):
         print(customer_main_data[i])
         amount = float(game_json[i]) * float(customer_main_data[i])
         print(amount)
-        cursor.execute("INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{})".format(amount,1,1))
+
+        cursor.execute("INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{})".format(amount,1,user_id))
         conn.commit()
 
 
@@ -159,7 +164,7 @@ def sale_finish(request):
     serialized_cart_data = json_converter(temp_keys[1],temp_vals[1])
 
     main_template = '{"mw3":"123"}'
-    add_sale_to_the_sale_table(main_template)
+    add_sale_to_the_sale_table(main_template,user_id)
     return render_to_response('finish_sale.html')
 
 
