@@ -7,6 +7,11 @@ from .models import Profile,Game
 from django.contrib.auth.models import User
 from django.contrib.sessions.models import Session
 from django.contrib.sessions.backends.db import SessionStore
+from django.db import connections
+
+
+
+
 
 import json
 
@@ -101,23 +106,16 @@ def signup(request):
     c.update(csrf(request))
     return render_to_response('signup.html',c)
 
+cursor = connections['alias'].cursor()
 
-def get_amount(cart_datas,username):
-    user_balance = User.objects.filter(username=username)
-    ###Games Tablosundaki amount alınacak db'de yoksa exception verilecek.
-    ###User tablosundan çekilecek.
-    return 1
+
 
 def sale_finish(request):
     my_keys = request.session['game']
     my_vals = request.session['count']
-    username = request.user
+    user_id = request.user.id
 
-    cart_datas =  json_converter(my_keys.split(','), my_vals.split(','))
-    amount = get_amount(cart_datas,username)
-
-
-    return render_to_response('finish_sale.html',{'cart_data':username})
+    return render_to_response('finish_sale.html',{'cart_data':json_converter(my_keys,my_vals)})
 
 
 

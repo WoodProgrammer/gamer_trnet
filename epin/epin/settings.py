@@ -83,7 +83,16 @@ DATABASES = {
         'PASSWORD': ' ',
         'HOST': 'localhost',
         'PORT': '',
+    },
+'alias': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'epin_test',
+        'USER': 'emirozbir',
+        'PASSWORD': ' ',
+        'HOST': '127.0.0.1',
+        'PORT': '',
     }
+
 }
 APPEND_SLASH=False
 # Password validation
