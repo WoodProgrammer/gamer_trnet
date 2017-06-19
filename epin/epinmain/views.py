@@ -9,7 +9,8 @@ from django.contrib.sessions.models import Session
 from django.contrib.sessions.backends.db import SessionStore
 from django.db import connections
 import psycopg2
-
+import logging
+logging.basicConfig(filename="test.log", level=logging.DEBUG)
 
 import json
 
@@ -35,6 +36,8 @@ def shop(request):
     if request.user.is_authenticated():
         c = {}
         c.update(csrf(request))
+        logging.debug("user loged")
+
         return render(request,'create_cart.html')
     else:
         return HttpResponseRedirect('/accounts/login/')
@@ -82,6 +85,9 @@ def login(request):
     c.update(csrf(request))
     if request.user.is_authenticated():
         return render_to_response('games.html', c)
+        logging.debug("user loged")
+
+
     else:
         return render_to_response('login.html',c)##look to the source code.
 
@@ -126,6 +132,7 @@ def add_sale_to_the_sale_table(cart_data,user_id):
            game_prices.append(game_datas[i][k+1])
         except:
             pass
+            logging.error("add_sale_to_sale_table() error exited with code 1  ")
 
     game_data_from_db = json_converter(game_names, game_prices)
     print(game_data_from_db)

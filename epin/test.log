@@ -1,0 +1,66 @@
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:root:user loged
+WARNING:django.request:Not Found: /cart/cart_status/games/games/
+WARNING:django.request:Not Found: /cart/cart_status/games/games/
+WARNING:django.request:Not Found: /cart/cart_status/games/games/
+DEBUG:root:user loged
+ERROR:django.request:Internal Server Error: /cart/sale/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 174, in sale_finish
+    add_sale_to_the_sale_table(main_template,user_id)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 154, in add_sale_to_the_sale_table
+    conn.commit()
+psycopg2.IntegrityError: insert or update on table "epinmain_sale" violates foreign key constraint "epinmain_sale_user_id_e4e7df32_fk_epinmain_profile_id"
+DETAIL:  Key (user_id)=(8) is not present in table "epinmain_profile".
+
+ERROR:django.request:Internal Server Error: /cart/sale/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 174, in sale_finish
+    add_sale_to_the_sale_table(main_template,user_id)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 154, in add_sale_to_the_sale_table
+    conn.commit()
+psycopg2.IntegrityError: insert or update on table "epinmain_sale" violates foreign key constraint "epinmain_sale_user_id_e4e7df32_fk_epinmain_profile_id"
+DETAIL:  Key (user_id)=(8) is not present in table "epinmain_profile".
+
+ERROR:django.request:Internal Server Error: /cart/sale/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 174, in sale_finish
+    add_sale_to_the_sale_table(main_template,user_id)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 154, in add_sale_to_the_sale_table
+    conn.commit()
+psycopg2.IntegrityError: insert or update on table "epinmain_sale" violates foreign key constraint "epinmain_sale_user_id_e4e7df32_fk_epinmain_profile_id"
+DETAIL:  Key (user_id)=(8) is not present in table "epinmain_profile".
+
+ERROR:django.request:Internal Server Error: /cart/sale/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 174, in sale_finish
+    add_sale_to_the_sale_table(main_template,user_id)
+  File "/Users/emirozbir/Desktop/test2/gamer_trnet/epin/epinmain/views.py", line 154, in add_sale_to_the_sale_table
+    conn.commit()
+psycopg2.IntegrityError: insert or update on table "epinmain_sale" violates foreign key constraint "epinmain_sale_user_id_e4e7df32_fk_epinmain_profile_id"
+DETAIL:  Key (user_id)=(8) is not present in table "epinmain_profile".
+

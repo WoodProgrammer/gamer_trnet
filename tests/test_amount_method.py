@@ -46,14 +46,4 @@ def add_sale_to_the_sale_table():
 
 
 
-    for i in customer_test_data.keys():
-
-             amount = float(game_json[i]) * float(customer_test_data[i])
-             cursor.execute('''
-             INSERT INTO epinmain_sale(amount,game_id_id,user_id) values({},{},{});'''.format(amount,1,1))
-             conn.commit()
-
-
-
-
 add_sale_to_the_sale_table()
