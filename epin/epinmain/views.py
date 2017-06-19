@@ -77,9 +77,10 @@ def games(request):
 def login(request):
     c = {}
     c.update(csrf(request))
-
-
-    return render_to_response('login.html',c)##look to the source code.
+    if request.user.is_authenticated():
+        return render_to_response('games.html', c)
+    else:
+        return render_to_response('login.html',c)##look to the source code.
 
 def auth_view(request):
     username = request.POST.get('username','')
@@ -92,17 +93,29 @@ def auth_view(request):
         return HttpResponseRedirect('/accounts/loggedin/')
     else:
         return HttpResponseRedirect('/accounts/invalid/')##Javascript ile bir hareket cekicez.
-def loggedin(request):
 
-    return render_to_response('loggedin.html',{'full_name':request.user.username})
-def logout(request):
-    auth.logout(request)
-    return HttpResponseRedirect('/accounts/login')
+
 
 def signup(request):
     c = {}
     c.update(csrf(request))
     return render_to_response('signup.html',c)
+
+
+def sale_finish(request):
+    my_keys = request.session['game']
+    my_vals = request.session['count']
+
+    cart_datas =  json_converter(my_keys.split(','), my_vals.split(','))
+
+    return render_to_response('finish_sale.html',{'cart_data':cart_datas})
+
+
+
+
+
+####AUTHENTICATION METHODS
+
 
 
 def createaccounts(request):
@@ -118,3 +131,13 @@ def createaccounts(request):
     profile_data = Profile.objects.create(user=user_obj)
     profile_data.birth_date="2010-12-23"
     return HttpResponseRedirect('/games/games/')
+
+
+def loggedin(request):
+
+    return render_to_response('loggedin.html',{'full_name':request.user.username})
+
+
+def logout(request):
+    auth.logout(request)
+    return HttpResponseRedirect('/accounts/login')
