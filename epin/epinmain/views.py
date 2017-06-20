@@ -43,10 +43,11 @@ def shop(request):
     if request.user.is_authenticated():
         c = {}
         c.update(csrf(request))
-        logging.debug("user loged")
+        logging.debug("USER : {}".format(request.user.username))
 
         return render(request,'create_cart.html')
     else:
+        logging.debug("CANNOT LOGGED  : {}".format(request.user.username))
         return HttpResponseRedirect('/accounts/login/')
 
 def cart_status(request):
@@ -56,13 +57,16 @@ def cart_status(request):
     try:
         request.session["game"] += ',' + request.POST.get("game")
         request.session["count"] += ',' + request.POST.get("count")
-        logger.info("hello")
+        logger.info("CART CREATED by {} {}".format(request.user.username,time.ctime()))
+
+
+
     except Exception as e:
         request.session["game"] =' '
         request.session["count"] =' '
         request.session["game"] += ',' + request.POST.get("game")
         request.session["count"] += ',' + request.POST.get("count")
-        logger.error('Something went wrong!')
+        logger.error('SESSION KEYS CREATED !')
 
     print(request.session['game'])
 
@@ -93,13 +97,19 @@ def login(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated():
-        return render('games.html', c)
-        loggers.debug("user loged")
-
+        try:
+            return render('games.html', c)
+            logger.info("USER {} LOGED TO THE SYSTEM ".format(request.user.username))
+        except :
+            loggers.info("USER {} CANNOT RENDER game.html TO THE SYSTEM ".format(request.user.username))
 
     else:
-        return render('login.html',c)##look to the source code.
-        loggers.error("Eroor!")
+        try:
+            return render('login.html',c)##look to the source code.
+            logger.info("Eroor!")
+        except :
+            logger.info("USER {} CANNOT have a template TO THE SYSTEM ".format(request.user.username))
+
 
 def auth_view(request):
     username = request.POST.get('username','')
