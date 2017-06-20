@@ -10,9 +10,16 @@ from django.contrib.sessions.backends.db import SessionStore
 from django.db import connections
 import psycopg2
 import logging
+import time
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 
 import json
+
+
+
+
+logger = logging.getLogger(__name__)
+
 
 
 def json_converter(keys,values):
@@ -49,11 +56,13 @@ def cart_status(request):
     try:
         request.session["game"] += ',' + request.POST.get("game")
         request.session["count"] += ',' + request.POST.get("count")
+        logger.info("hello")
     except Exception as e:
         request.session["game"] =' '
         request.session["count"] =' '
         request.session["game"] += ',' + request.POST.get("game")
         request.session["count"] += ',' + request.POST.get("count")
+        logger.error('Something went wrong!')
 
     print(request.session['game'])
 
@@ -75,21 +84,22 @@ def games(request):
 
 
 
-        return render_to_response('index.html',{'cart_datas':json_converter(my_keys.split(','),my_vals.split(','))})
+        return render('index.html',{'cart_datas':json_converter(my_keys.split(','),my_vals.split(','))})
     else:
-        return render_to_response('joinus.html')
+        return render('joinus.html')
 
 
 def login(request):
     c = {}
     c.update(csrf(request))
     if request.user.is_authenticated():
-        return render_to_response('games.html', c)
-        logging.debug("user loged")
+        return render('games.html', c)
+        loggers.debug("user loged")
 
 
     else:
-        return render_to_response('login.html',c)##look to the source code.
+        return render('login.html',c)##look to the source code.
+        loggers.error("Eroor!")
 
 def auth_view(request):
     username = request.POST.get('username','')
@@ -172,7 +182,7 @@ def sale_finish(request):
 
     main_template = '{"mw3":"123"}'
     add_sale_to_the_sale_table(main_template,user_id)
-    return render_to_response('finish_sale.html')
+    return render('finish_sale.html')
 
 
 ####AUTHENTICATION METHODS
@@ -182,7 +192,7 @@ def sale_finish(request):
 def signup(request):
     c = {}
     c.update(csrf(request))
-    return render_to_response('signup.html',c)
+    return render('signup.html',c)
 
 
 
@@ -205,7 +215,7 @@ def createaccounts(request):
 
 def loggedin(request):
 
-    return render_to_response('loggedin.html',{'full_name':request.user.username})
+    return render('loggedin.html',{'full_name':request.user.username})
 
 
 def logout(request):
