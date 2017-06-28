@@ -1,11 +1,20 @@
-<h1>Login Page</h1>
-{%if form.errors%}
-<p>error!</p>
-{%endif%}
-<form action="/accounts/auth/" method="post" >{%csrf_token%}
-    Username:<br>
-    <input type="text" name="username" id="username">   </input>
-    Password:<br>
-    <input type="password" name="password" id="password">   </input>
-    <input type="submit" value="login">   </input>
-</form>
+<!doctype html>
+<html>
+
+    <head>
+    </head>
+
+    <body>
+    <h1>WELCOME OGIN </h1>
+        <form action="/accounts/auth/" method="post">{% csrf_token %}
+
+            <input type="text" name="username"></input>
+            <input type="password" name="password"></input>
+
+            <button type="submit">SUBMIT</button>
+
+
+        </form>
+
+    </body>
+</html>
