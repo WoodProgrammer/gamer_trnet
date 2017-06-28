@@ -1,17 +1,19 @@
-from django.shortcuts import render
+from django.shortcuts import render,render_to_response
 
-
-
-
-
-# Create your views here.
 def login(request):
-
-
+    if request.user.is_authenticated():
+        return render(request,"games.html")
+    else:
+        return render(request,"login.html")
 
 
     pass
 def logout(request):
+
+
+    pass
+
+
     pass
 def sign_up(request):
 
