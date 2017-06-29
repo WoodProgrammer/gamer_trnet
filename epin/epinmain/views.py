@@ -24,11 +24,22 @@ cursor = connections['alias'].cursor()
 
 
 
-####GAMES METHODS
+####GAMES METHODSa
+
+def fetch_all_game():
+    show_game_name=[]
+    show_game_price=[]
+    games = cursor.execute("SELECT * FROM game")
+    data = cursor.fetchall()
+    for i in data:
+        show_game_name.append(i[1])
+        show_game_price.append(i[2])
+    return show_game_name,show_game_price
 
 def games(request):
+    x,y=fetch_all_game()
     if request.user.is_authenticated():
-        return render(request, "games.html")
+        return render_to_response("games.html",{"game_names":x,"game_prices":y})
     else:
         return render(request, "login.html")
 
@@ -101,11 +112,6 @@ def loggedin(request):
 def logout(request):
     auth.logout(request)
     return HttpResponseRedirect('/accounts/login/')
-
-
-
-
-
 
 
 

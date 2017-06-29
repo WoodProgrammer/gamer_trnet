@@ -78,19 +78,19 @@ SESSION_SAVE_EVERY_REQUEST = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mysecretpassword',
-        'HOST': '127.0.0.1',
-        'PORT': '5434',
+        'NAME': 'game_trnetdb',
+        'USER': 'emir',
+        'PASSWORD': 'abcde',
+        'HOST': '192.168.31.247',
+        'PORT': '',
     },
 'alias': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'test_db',
-        'USER': 'postgres',
-        'PASSWORD': 'mysecretpassword',
-        'HOST': '127.0.0.1',
-        'PORT': '5434',
+        'NAME': 'game_trnetdb',
+        'USER': 'emir',
+        'PASSWORD': 'abcde',
+        'HOST': '192.168.31.247',
+        'PORT': '',
     }
 
 }

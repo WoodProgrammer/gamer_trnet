@@ -2650,3 +2650,31 @@ WARNING:django.request:Not Found: /accounts/logput/
 WARNING:django.request:Not Found: /accounts/singup/
 WARNING:django.request:Not Found: /
 WARNING:django.request:Not Found: /favicon.ico
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in games
+    return render_to_response("games.html",{"games":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 31, in fetch_all_game
+    return games.fechall()
+AttributeError: 'NoneType' object has no attribute 'fechall'
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in games
+    return render_to_response("games.html",{"games":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 31, in fetch_all_game
+    return games.fetchall()
+AttributeError: 'NoneType' object has no attribute 'fetchall'
