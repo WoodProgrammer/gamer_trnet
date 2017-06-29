@@ -32,7 +32,7 @@ def fetch_all_game():
     game_show_data = {}
     show_game_name=[]
     show_game_price=[]
-    games = cursor.execute("SELECT * FROM game")
+    games = cursor.execute("SELECT * FROM epinmain_game")
     data = cursor.fetchall()
     for i in data:
         show_game_name.append(i[1])
@@ -42,9 +42,13 @@ def fetch_all_game():
 
 def games(request):
     if request.user.is_authenticated():
-        logging.debug("USER {} FETCHED GAMES".format(request.user))
+        if request.session['language'] == "tr":
 
-        return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+            logging.debug("USER {} FETCHED GAMES".format(request.user))
+            return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+        else:
+            logging.debug("USER {} FETCHED GAMES".format(request.user))
+            return render_to_response("eng/games.html", {"game_data": fetch_all_game()})
 
     else:
         return render(request, "login.html")
@@ -57,13 +61,16 @@ def games(request):
 
 def index(request):
     if request.user.is_authenticated():
-        return render(request,"index.html")
+        return HttpResponseRedirect('/games/games/')
     else:
         return render(request,"login.html")
 
 
 
 def auth_detection(request):
+
+    request.session['language']=request.POST.get('lang')
+
     username = request.POST.get('username', '')
     password = request.POST.get('password', '')
     print(username)

@@ -74,6 +74,7 @@ WSGI_APPLICATION = 'epin.wsgi.application'
 SESSION_SAVE_EVERY_REQUEST = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+'''
 try:
     DATABASES = {
         'default': {
@@ -94,11 +95,16 @@ try:
         }
 
     }
-except:
-    DATABASES = {
+
+'''
+
+
+
+
+DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'epin_maindb',
+            'NAME': 'epin_main_db',
             'USER': 'emirozbir',
             'PASSWORD': ' ',
             'HOST': '127.0.0.1',
@@ -106,14 +112,14 @@ except:
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'epin_maindb',
+            'NAME': 'epin_main_db',
             'USER': 'emirozbir',
             'PASSWORD': ' ',
             'HOST': '127.0.0.1',
             'PORT': '',
         }
 
-    }
+}
 
 APPEND_SLASH=False
 # Password validation
