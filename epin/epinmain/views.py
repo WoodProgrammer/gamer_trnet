@@ -37,13 +37,15 @@ def fetch_all_game():
     for i in data:
         show_game_name.append(i[1])
         show_game_price.append(i[2])
-
     return show_game_name,show_game_price
 
 
 def games(request):
     if request.user.is_authenticated():
+        logging.debug("USER {} FETCHED GAMES".format(request.user))
+
         return render_to_response("games.html",{"game_data":fetch_all_game()})
+
     else:
         return render(request, "login.html")
 
@@ -106,15 +108,21 @@ def createaccounts(request):
     profile_data = Profile.objects.create(user=user_obj)
     profile_data.birth_date = "{}".format("2010-09-09")
     profile_data.save()
+    logging.debug("USER {} CREATED  ".format(request.user))
+
     return HttpResponseRedirect('/accounts/login/')
 
 
 def loggedin(request):
+    logging.debug("USER {} LOGIN ".format(request.user))
+
     return render('games.html', {'full_name': request.user.username})
 
 
 def logout(request):
     auth.logout(request)
+    logging.debug("USER {} LOGOUT ".format(request.user))
+
     return HttpResponseRedirect('/accounts/login/')
 
 
@@ -129,4 +137,6 @@ def create_cart():
 
 
 def finish_sell():
+
+
     pass
