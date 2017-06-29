@@ -74,26 +74,47 @@ WSGI_APPLICATION = 'epin.wsgi.application'
 SESSION_SAVE_EVERY_REQUEST = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+try:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'game_trnetdb',
+            'USER': 'emir',
+            'PASSWORD': 'abcde',
+            'HOST': '192.168.31.247',
+            'PORT': '',
+        },
+    'alias': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'game_trnetdb',
+            'USER': 'emir',
+            'PASSWORD': 'abcde',
+            'HOST': '192.168.31.247',
+            'PORT': '',
+        }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'game_trnetdb',
-        'USER': 'emir',
-        'PASSWORD': 'abcde',
-        'HOST': '192.168.31.247',
-        'PORT': '',
-    },
-'alias': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'game_trnetdb',
-        'USER': 'emir',
-        'PASSWORD': 'abcde',
-        'HOST': '192.168.31.247',
-        'PORT': '',
+    }
+except:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'epin_maindb',
+            'USER': 'emirozbir',
+            'PASSWORD': ' ',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+        },
+        'alias': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'epin_maindb',
+            'USER': 'emirozbir',
+            'PASSWORD': ' ',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+        }
+
     }
 
-}
 APPEND_SLASH=False
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators

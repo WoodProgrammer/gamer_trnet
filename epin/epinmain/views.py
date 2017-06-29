@@ -44,7 +44,7 @@ def games(request):
     if request.user.is_authenticated():
         logging.debug("USER {} FETCHED GAMES".format(request.user))
 
-        return render_to_response("games.html",{"game_data":fetch_all_game()})
+        return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
 
     else:
         return render(request, "login.html")
