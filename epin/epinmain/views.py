@@ -11,6 +11,8 @@ from django.db import connections
 import psycopg2
 import logging
 import time
+import json
+
 
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 
@@ -27,6 +29,7 @@ cursor = connections['alias'].cursor()
 ####GAMES METHODSa
 
 def fetch_all_game():
+    game_show_data = {}
     show_game_name=[]
     show_game_price=[]
     games = cursor.execute("SELECT * FROM game")
@@ -34,12 +37,13 @@ def fetch_all_game():
     for i in data:
         show_game_name.append(i[1])
         show_game_price.append(i[2])
+
     return show_game_name,show_game_price
 
+
 def games(request):
-    x,y=fetch_all_game()
     if request.user.is_authenticated():
-        return render_to_response("games.html",{"game_names":x,"game_prices":y})
+        return render_to_response("games.html",{"game_data":fetch_all_game()})
     else:
         return render(request, "login.html")
 

@@ -1,3 +1,6 @@
 <h1>GAMES</h1>
-{{ game_names }}
-{{ game_prices }}
+{% for x,y in game_data %}
+    {{x}}
+    {{y}}
+
+{% endfor %}
