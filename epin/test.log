@@ -2188,3 +2188,465 @@ Traceback (most recent call last):
   File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 39, in auth
     user = auth.authenticate(username=username,password=password)
 AttributeError: 'function' object has no attribute 'authenticate'
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /accounts/auth/
+WARNING:django.request:Not Found: /games/
+WARNING:django.request:Not Found: /games
+WARNING:django.request:Not Found: /game
+WARNING:django.request:Not Found: /games/games/
+WARNING:django.request:Not Found: /games/games/
+WARNING:django.request:Not Found: /games/games/
+WARNING:django.request:Not Found: /accounts/logout/
+WARNING:django.request:Not Found: /account/login/
+WARNING:django.request:Not Found: /account/login/
+WARNING:django.request:Not Found: /account/login/
+WARNING:django.request:Not Found: /account/logout/
+WARNING:django.request:Not Found: /account/logout/
+WARNING:django.request:Not Found: /account/logout/
+WARNING:django.request:Not Found: /accounts/login
+WARNING:django.request:Not Found: /games/
+WARNING:django.request:Not Found: /games/
+ERROR:django.request:Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+ERROR:django.request:Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+ERROR:django.request:Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=() already exists.
+
+ERROR:django.request:Internal Server Error: /accounts/signup/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 62, in signup
+    return render('signup.html', c)
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: {'csrf_token': <SimpleLazyObject: <function csrf.<locals>._get_val at 0x104482268>>}
+WARNING:django.request:Not Found: /accounts/create_user/
+WARNING:django.request:Not Found: /accounts/createaccounts/
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(Emir) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(Emir) already exists.
+
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(Emir) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(Emir) already exists.
+
+WARNING:django.request:Not Found: /accounts/logouy/
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 79, in createaccounts
+    profile_data.save()
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 903, in _save_table
+    forced_update)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 953, in _do_update
+    return filtered._update(values) > 0
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 664, in _update
+    return query.get_compiler(self.db).execute_sql(CURSOR)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1191, in execute_sql
+    cursor = super(SQLUpdateCompiler, self).execute_sql(result_type)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 863, in execute_sql
+    sql, params = self.as_sql()
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1157, in as_sql
+    val = field.get_db_prep_save(val, connection=self.connection)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 770, in get_db_prep_save
+    prepared=False)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1301, in get_db_prep_value
+    value = self.get_prep_value(value)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1296, in get_prep_value
+    return self.to_python(value)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/fields/__init__.py", line 1271, in to_python
+    params={'value': value},
+django.core.exceptions.ValidationError: ["'' value has an invalid date format. It must be in YYYY-MM-DD format."]
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(emirozbir22) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(username), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(emirozbir22) already exists.
+
+WARNING:django.request:Not Found: /accounts/logi/
+WARNING:django.request:Not Found: /account/login/
+WARNING:django.request:Not Found: /accounts/logput/
+WARNING:django.request:Not Found: /games/logput/
+WARNING:django.request:Not Found: /games/logout/
+WARNING:django.request:Not Found: /games/logout/
+WARNING:django.request:Not Found: /games/logout/
+WARNING:django.request:Not Found: /
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /accounts/auth/
+WARNING:django.request:Not Found: /account/logout/
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 75, in createaccounts
+    user_obj.set_password(password="{}".format(password))
+TypeError: set_password() got an unexpected keyword argument 'password'
+ERROR:django.request:Internal Server Error: /accounts/createaccounts/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+psycopg2.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(asddeneme) already exists.
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 73, in createaccounts
+    user_obj = User.objects.create(username="{}".format(username), email="{}".format(email), password="{}".format(password))
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 394, in create
+    obj.save(force_insert=True, using=self.db)
+  File "/usr/local/lib/python3.6/site-packages/django/contrib/auth/base_user.py", line 80, in save
+    super(AbstractBaseUser, self).save(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 806, in save
+    force_update=force_update, update_fields=update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 836, in save_base
+    updated = self._save_table(raw, cls, force_insert, force_update, using, update_fields)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 922, in _save_table
+    result = self._do_insert(cls._base_manager, using, fields, update_pk, raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/base.py", line 961, in _do_insert
+    using=using, raw=raw)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/manager.py", line 85, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/query.py", line 1063, in _insert
+    return query.get_compiler(using=using).execute_sql(return_id)
+  File "/usr/local/lib/python3.6/site-packages/django/db/models/sql/compiler.py", line 1099, in execute_sql
+    cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+django.db.utils.IntegrityError: duplicate key value violates unique constraint "auth_user_username_key"
+DETAIL:  Key (username)=(asddeneme) already exists.
+
+WARNING:django.security.csrf:Forbidden (CSRF token missing or incorrect.): /admin/login/
+WARNING:django.request:Not Found: /accounts/logput/
+WARNING:django.request:Not Found: /accounts/singup/
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /favicon.ico

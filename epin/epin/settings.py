@@ -78,19 +78,19 @@ SESSION_SAVE_EVERY_REQUEST = True
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'epin_main_db',
-        'USER': 'emirozbir',
-        'PASSWORD': ' ',
-        'HOST': 'localhost',
-        'PORT': '',
+        'NAME': 'test_db',
+        'USER': 'postgres',
+        'PASSWORD': 'mysecretpassword',
+        'HOST': '127.0.0.1',
+        'PORT': '5434',
     },
 'alias': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'epin_main_db',
-        'USER': 'emirozbir',
-        'PASSWORD': ' ',
+        'NAME': 'test_db',
+        'USER': 'postgres',
+        'PASSWORD': 'mysecretpassword',
         'HOST': '127.0.0.1',
-        'PORT': '',
+        'PORT': '5434',
     }
 
 }

@@ -15,8 +15,24 @@ import time
 logging.basicConfig(filename="test.log", level=logging.DEBUG)
 
 import json
-
+##### META DEFINITIONS
 logger = logging.getLogger(__name__)
+cursor = connections['alias'].cursor()
+######
+
+
+
+
+
+####GAMES METHODS
+
+def games(request):
+    if request.user.is_authenticated():
+        return render(request, "games.html")
+    else:
+        return render(request, "login.html")
+
+
 
 
 
@@ -40,17 +56,19 @@ def auth_detection(request):
     print(user)
     if user is not None:
         auth.login(request,user)
-        return render(request,"games.html")
+        return HttpResponseRedirect("/games/games/")
     else:
-        return render(request, "login.html")
 
-
+        return HttpResponseRedirect("/accounts/login/")
 
 
 def signup(request):
     c = {}
     c.update(csrf(request))
-    return render('signup.html', c)
+    return render(request,'signup.html', c)
+
+
+
 
 
 def createaccounts(request):
@@ -61,25 +79,44 @@ def createaccounts(request):
     password = request.POST.get('password', '')
     birth_date = request.POST.get('birth_date', '')
 
-    user_obj = User.objects.create(username="{}".format(name), email="{}".format(email), password="{}".format(password))
 
 
+    user_obj = User.objects.create(username="{}".format(username), email="{}".format(email), password="{}".format(password))
 
+    x = user_obj.set_password("{}".format(password))
 
-
+    print
     user_obj.save()
+
     profile_data = Profile.objects.create(user=user_obj)
-    profile_data.birth_date = "2010-12-23"
-    return HttpResponseRedirect('/games/games/')
+    profile_data.birth_date = "{}".format("2010-09-09")
+    profile_data.save()
+    return HttpResponseRedirect('/accounts/login/')
 
 
 def loggedin(request):
     return render('games.html', {'full_name': request.user.username})
 
 
-
-
-
 def logout(request):
     auth.logout(request)
-    return HttpResponseRedirect('/accounts/login')
+    return HttpResponseRedirect('/accounts/login/')
+
+
+
+
+
+
+
+
+
+##########CART METHODS
+
+
+def create_cart():
+
+    pass
+
+
+def finish_sell():
+    pass

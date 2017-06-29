@@ -5,8 +5,10 @@
     </head>
 
     <body>
-    <h1>WELCOME OGIN </h1>
-        <form action="/accounts/auth/" method="post">{% csrf_token %}
+    <h1>WELCOME LOGIN </h1>
+        {{test_data}}
+
+    <form action="/accounts/auth/" method="post">{% csrf_token %}
 
             <input type="text" name="username"></input>
             <input type="password" name="password"></input>
