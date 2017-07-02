@@ -16,11 +16,8 @@ Including another URLconf
 from django.conf.urls import url,include
 from django.contrib import admin
 
-
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^accounts/', include('epinmain.urls')),
-    url(r'^games/', include('epinmain.gameurls')),
-    url(r'^cart/', include('epinmain.carturl')),
+    url(r'^account/',include('epinmain.urls')),
 
 ]
