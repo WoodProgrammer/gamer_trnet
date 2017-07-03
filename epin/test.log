@@ -468,3 +468,10 @@ Traceback (most recent call last):
     .format(num_loopvars, len_item),
 ValueError: Need 2 values to unpack in for loop; got 0. 
 DEBUG:root:USER emirozbir FETCHED GAMES
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /games
+WARNING:django.request:Not Found: /games/
+WARNING:django.request:Not Found: /cart/
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /

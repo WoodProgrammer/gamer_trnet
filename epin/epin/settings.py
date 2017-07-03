@@ -104,18 +104,18 @@ try:
 DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'epin_main_db',
-            'USER': 'emirozbir',
-            'PASSWORD': ' ',
-            'HOST': '127.0.0.1',
+            'NAME': 'game_trnetdb',
+            'USER': 'sercan',
+            'PASSWORD': '12345',
+            'HOST': '192.168.31.247',
             'PORT': '',
         },
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': 'epin_main_db',
-            'USER': 'emirozbir',
-            'PASSWORD': ' ',
-            'HOST': '127.0.0.1',
+            'NAME': 'game_trnetdb',
+            'USER': 'sercan',
+            'PASSWORD': '12345',
+            'HOST': '192.168.31.247',
             'PORT': '',
         }
 
