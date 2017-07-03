@@ -20,7 +20,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.10/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '=pj$qkm(z%*@r%ok!o^3jtsu)nqipgzz@*$%pboyju-r*gg55#'
+SECRET_KEY = '$epszxyu2p_0l3(@4e19l=+u&8s=+4@%m880fts_kt_(=m!oyc'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -31,13 +31,13 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'epinmain',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'epinmain',
 ]
 
 MIDDLEWARE = [
@@ -63,6 +63,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+
             ],
         },
     },
@@ -70,31 +71,57 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'epin.wsgi.application'
 
-
+SESSION_SAVE_EVERY_REQUEST = True
 # Database
 # https://docs.djangoproject.com/en/1.10/ref/settings/#databases
+'''
+try:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'game_trnetdb',
+            'USER': 'emir',
+            'PASSWORD': 'abcde',
+            'HOST': '192.168.31.247',
+            'PORT': '',
+        },
+    'alias': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'game_trnetdb',
+            'USER': 'emir',
+            'PASSWORD': 'abcde',
+            'HOST': '192.168.31.247',
+            'PORT': '',
+        }
+
+    }
+
+'''
+
+
 
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'epin_test',
-        'USER': 'emirozbir',
-        'PASSWORD': ' ',
-        'HOST': 'localhost',
-        'PORT': '',
-    },
-'alias': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'epin_test',
-        'USER': 'emirozbir',
-        'PASSWORD': ' ',
-        'HOST': '127.0.0.1',
-        'PORT': '',
-    }
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'epin_main_db',
+            'USER': 'emirozbir',
+            'PASSWORD': ' ',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+        },
+        'alias': {
+            'ENGINE': 'django.db.backends.postgresql_psycopg2',
+            'NAME': 'epin_main_db',
+            'USER': 'emirozbir',
+            'PASSWORD': ' ',
+            'HOST': '127.0.0.1',
+            'PORT': '',
+        }
 
 }
 
+APPEND_SLASH=False
 # Password validation
 # https://docs.djangoproject.com/en/1.10/ref/settings/#auth-password-validators
 
@@ -114,6 +141,30 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'formatters': {
+        'verbose': {
+            'format': '%(levelname)s %(asctime)s %(module)s %(process)d %(thread)d %(message)s'
+        },
+    },
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'filename':'debug.log',
+            'class': 'logging.FileHandler',
+
+        },
+    },
+    'loggers': {
+        'epinmain.views': {
+            'handlers': ['file'],
+            'level':'INFO',
+            'propagate': True,
+        },
+    },
+}
 # Internationalization
 # https://docs.djangoproject.com/en/1.10/topics/i18n/
 

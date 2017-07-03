@@ -1,0 +1,470 @@
+DEBUG:root:USER admin FETCHED GAMES
+DEBUG:root:USER admin FETCHED GAMES
+DEBUG:root:USER admin FETCHED GAMES
+DEBUG:root:USER AnonymousUser LOGOUT 
+DEBUG:root:USER AnonymousUser CREATED  
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+WARNING:django.request:Not Found: /account/login/
+DEBUG:root:USER AnonymousUser LOGOUT 
+DEBUG:root:USER AnonymousUser LOGOUT 
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+ERROR:django.request:Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 62, in index
+    return render(request,"eng/index.html")
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: eng/index.html
+WARNING:django.request:Not Found: /account/login/
+ERROR:django.request:Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 62, in index
+    return render(request,"eng/index.html")
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: eng/index.html
+WARNING:django.request:Not Found: /account/login/
+ERROR:django.request:Internal Server Error: /accounts/login/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 62, in index
+    return render(request,"tr/index.html")
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 30, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 67, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 25, in get_template
+    raise TemplateDoesNotExist(template_name, chain=chain)
+django.template.exceptions.TemplateDoesNotExist: tr/index.html
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:root:USER AnonymousUser LOGOUT 
+WARNING:django.request:Not Found: /favicon.ico
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER AnonymousUser LOGOUT 
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+WARNING:django.request:Not Found: /games/game/
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 47, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+psycopg2.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 51, in games
+    return render_to_response("eng/games.html", {"game_data": fetch_all_game()})
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 35, in fetch_all_game
+    games = cursor.execute("SELECT * FROM game")
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 80, in execute
+    return super(CursorDebugWrapper, self).execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 65, in execute
+    return self.cursor.execute(sql, params)
+  File "/usr/local/lib/python3.6/site-packages/django/db/utils.py", line 94, in __exit__
+    six.reraise(dj_exc_type, dj_exc_value, traceback)
+  File "/usr/local/lib/python3.6/site-packages/django/utils/six.py", line 685, in reraise
+    raise value.with_traceback(tb)
+  File "/usr/local/lib/python3.6/site-packages/django/db/backends/utils.py", line 63, in execute
+    return self.cursor.execute(sql)
+django.db.utils.ProgrammingError: relation "game" does not exist
+LINE 1: SELECT * FROM game
+                      ^
+
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 51, in games
+    return render_to_response("eng/games.html", {"game_data": fetch_all_game()})
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/defaulttags.py", line 207, in render
+    .format(num_loopvars, len_item),
+ValueError: Need 2 values to unpack in for loop; got 0. 
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER emirozbir FETCHED GAMES
+DEBUG:root:USER AnonymousUser LOGOUT 
+DEBUG:root:USER emirozbir FETCHED GAMES
+ERROR:django.request:Internal Server Error: /games/games/
+Traceback (most recent call last):
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/exception.py", line 41, in inner
+    response = get_response(request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 187, in _get_response
+    response = self.process_exception_by_middleware(e, request)
+  File "/usr/local/lib/python3.6/site-packages/django/core/handlers/base.py", line 185, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/Users/emirozbir/Desktop/desktop/gamer_trnet-yedek/epin/epinmain/views.py", line 48, in games
+    return render_to_response("tr/oyunlar.html",{"game_data":fetch_all_game()})
+  File "/usr/local/lib/python3.6/site-packages/django/shortcuts.py", line 21, in render_to_response
+    content = loader.render_to_string(template_name, context, using=using)
+  File "/usr/local/lib/python3.6/site-packages/django/template/loader.py", line 68, in render_to_string
+    return template.render(context, request)
+  File "/usr/local/lib/python3.6/site-packages/django/template/backends/django.py", line 66, in render
+    return self.template.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 207, in render
+    return self._render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 199, in _render
+    return self.nodelist.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 990, in render
+    bit = node.render_annotated(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/base.py", line 957, in render_annotated
+    return self.render(context)
+  File "/usr/local/lib/python3.6/site-packages/django/template/defaulttags.py", line 207, in render
+    .format(num_loopvars, len_item),
+ValueError: Need 2 values to unpack in for loop; got 0. 
+DEBUG:root:USER emirozbir FETCHED GAMES

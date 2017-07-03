@@ -6,12 +6,15 @@
 
     <body>
     <h1>WELCOME LOGIN </h1>
-        <form action="/account/index/" method="post">{% csrf_token %}
+        {{test_data}}
+
+    <form action="/accounts/auth/" method="post">{% csrf_token %}
 
             <input type="text" name="username"></input>
             <input type="password" name="password"></input>
+            <input type="text" name="lang"></input>
 
-            <button type="submit"></button>
+            <button type="submit">SUBMIT</button>
 
 
         </form>
