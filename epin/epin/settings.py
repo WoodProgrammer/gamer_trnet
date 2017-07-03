@@ -80,16 +80,16 @@ try:
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
-            'USER': 'emir',
-            'PASSWORD': 'abcde',
+            'USER': 'halil',
+            'PASSWORD': '123456',
             'HOST': '192.168.31.247',
             'PORT': '',
         },
     'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
-            'USER': 'emir',
-            'PASSWORD': 'abcde',
+            'USER': 'halil',
+            'PASSWORD': '123456',
             'HOST': '192.168.31.247',
             'PORT': '',
         }
@@ -105,7 +105,11 @@ DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
+<<<<<<< HEAD
             'USER': 'sercan',
+=======
+            'USER': 'halilabi',
+>>>>>>> f81901c48782f8acf699b819c2dd910e0bce195b
             'PASSWORD': '12345',
             'HOST': '192.168.31.247',
             'PORT': '',
@@ -113,7 +117,11 @@ DATABASES = {
         'alias': {
             'ENGINE': 'django.db.backends.postgresql_psycopg2',
             'NAME': 'game_trnetdb',
+<<<<<<< HEAD
             'USER': 'sercan',
+=======
+            'USER': 'halilabi',
+>>>>>>> f81901c48782f8acf699b819c2dd910e0bce195b
             'PASSWORD': '12345',
             'HOST': '192.168.31.247',
             'PORT': '',

@@ -1,0 +1,43 @@
+.body {
+background-color:#60bdf7;
+}
+
+.navbar {
+  margin-bottom: 20px;
+}
+ .copyright, .design,.design a{
+color:black;
+}
+.title-widget
+{
+color:black;
+}
+.footer-bottom {
+    min-height: 30px;
+    width: 100%;
+}
+.widget_nav_menu ul li {
+    font-size: 13px;
+    font-weight: 700;
+    line-height: 20px;
+	position: relative;
+    text-transform: uppercase;
+	border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    margin-bottom: 7px;
+    padding-bottom: 7px;
+	width:95%;
+}
+.title-widget {
+	color: #898989;
+	font-size: 20px;
+	font-weight: 300;
+	line-height: 1;
+	position: relative;
+	text-transform: uppercase;
+	font-family: 'Fjalla One', sans-serif;
+	margin-top: 0;
+	margin-right: 0;
+	margin-bottom: 25px;
+	margin-left: 0;
+	padding-left: 28px;
+}
