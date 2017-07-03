@@ -479,3 +479,5 @@ WARNING:django.request:Not Found: /
 WARNING:django.request:Not Found: /
 WARNING:django.request:Not Found: /
 WARNING:django.request:Not Found: /
+WARNING:django.request:Not Found: /base
+WARNING:django.request:Not Found: /base.html
