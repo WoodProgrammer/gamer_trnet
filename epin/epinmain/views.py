@@ -138,6 +138,9 @@ def logout(request):
 ##########CART METHODS
 
 
+def index(request):
+    return render(request,"eng/index.html")
+
 
 
 def json_serialize():

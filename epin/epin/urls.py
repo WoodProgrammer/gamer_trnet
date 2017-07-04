@@ -22,5 +22,5 @@ urlpatterns = [
     url(r'^accounts/', include('epinmain.urls')),
     url(r'^games/', include('epinmain.gameurls')),
     url(r'^shop/', include('epinmain.carturl')),
-
+    url(r'^',include('epinmain.index')),
 ]
