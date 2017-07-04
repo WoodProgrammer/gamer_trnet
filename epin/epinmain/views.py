@@ -133,6 +133,26 @@ def logout(request):
     return HttpResponseRedirect('/accounts/login/')
 
 
+def search(request):
+
+    if request.method=="POST" :
+        try:
+            searching_word=request.POST.get('search','')
+        except :
+            searching_word = False
+    find=cursor.execute("Select * from game Where name ILIKE ' "+searching_word+" ';")
+
+
+
+    return render(request, "tr/search.html", {"Search":find})
+
+
+
+
+
+
+
+
 
 
 ##########CART METHODS

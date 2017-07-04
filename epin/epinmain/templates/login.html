@@ -15,6 +15,14 @@
             <input type="text" name="lang"></input>
 
             <button type="submit">SUBMIT</button>
+    </form>
+      <form action="{% url 'epinmaiin:search' %}" method="POST">
+
+        <input type="hidden" name="site" value=" ">{% csrf_token %}
+            Site İçi Arama &#58;
+        <input type="text" name="search">
+        <input type="submit" value="ARA">
+
 
 
         </form>
