@@ -1,1 +1,7 @@
 .idea
+*.log
+
+!epin/*.log
+!epinmain/*.log
+!epin/*.pyc
+!epinmain/*.pyc
