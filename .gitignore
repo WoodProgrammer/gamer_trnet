@@ -2,6 +2,8 @@
 *.log
 *.pyc
 
+epin/epin/settings.py
+
 !epin/*.log
 !epinmain/*.log
 !epin/test.log
