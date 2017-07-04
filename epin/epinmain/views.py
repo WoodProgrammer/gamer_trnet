@@ -138,12 +138,33 @@ def logout(request):
 ##########CART METHODS
 
 
-def create_cart():
+
+
+def json_serialize():
+
+
 
     pass
 
+def create_cart(request):
 
-def finish_sell():
+    return render(request,"create_cart.html")
 
+def finish_sell(request):
+    return render(request,"finish.html")
 
-    pass
+def show_cart(request):
+    game_name = request.POST.get('game_name','')
+    game_money_count = request.POST.get('game_money_count','')
+    try :
+        request.session['game_name'] += game_name
+        request.session['game_money_count'] += game_money_count
+
+    except:
+        request.session['game_name'] = []
+        request.session['game_money_count'] = []
+
+        request.session['game_name'] += game_name
+        request.session['game_money_count'] += game_money_count
+    cart_data = json_serialize( request.session['game_name'], request.session['game_money_count'])
+    return render(request,"cart.html",{'cart_data': cart_data})
