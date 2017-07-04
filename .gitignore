@@ -3,5 +3,6 @@
 
 !epin/*.log
 !epinmain/*.log
+!epin/test.log
 !epin/*.pyc
 !epinmain/*.pyc
