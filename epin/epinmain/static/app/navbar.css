@@ -1,9 +1,9 @@
-.body {
-background-color:#60bdf7;
+body {
+  min-height: 2000px;
 }
 
-.navbar {
-  margin-bottom: 20px;
+.navbar-static-top {
+  margin-bottom: 19px;
 }
  .copyright, .design,.design a{
 color:black;
