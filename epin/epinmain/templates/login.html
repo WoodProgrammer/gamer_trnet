@@ -5,11 +5,13 @@
     <title>{% block title %} Giriş Yapın {% endblock %}</title>
 
     <meta charset="UTF-8">
+
 </head>
 {% block body %}
 <div class="container">
-    <form class="form-signin">
+    <form class="form-signin" >
         <h2 class="form-signin-heading">Please sign in</h2>
+        <p id="result"></p>
         <label for="inputEmail" class="sr-only">Email address</label>
         <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
         <label for="inputPassword" class="sr-only">Password</label>
@@ -19,8 +21,41 @@
                 <input type="checkbox" value="remember-me"> Remember me
             </label>
         </div>
-        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+        <button class="btn btn-lg btn-primary btn-block" type="submit" onclick="return validation()">Sign in</button>
     </form>
+    <script>
 
+        function validation() {
+            var email = document.getElementById("inputEmail");
+            var email_value = email.value;
+            var password = document.getElementById("inputPassword");
+            var password_value = password.value;
+
+            if (mail_regex(email_value) === false){
+                document.getElementById("result").textContent= "invalid e-mail addresses";
+                document.getElementById("result").setAttribute("style","color:red");
+                return false;
+            }
+
+            if(password_regex(password_value) === false){
+                document.getElementById("result").textContent= "password must 5-12 length and must have letters and numbers";
+                document.getElementById("result").setAttribute("style","color:red");
+                return false;
+            }
+
+        }
+
+
+        function mail_regex(email) {
+            var re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+
+        function password_regex(password) {
+            var re = /^[a-zA-Z0-9]{5,12}$/;
+            return re.test(password);
+        }
+
+    </script>
 </div> <!-- /container -->
 {% endblock %}
