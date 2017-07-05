@@ -23,8 +23,15 @@ cursor = connections['alias'].cursor()
 ######
 
 
+## FOR DEBUGGING PAGES
+def login(request):
+   return render(request, "login.html")
+def home(request):
+   return render(request, "index.html")
+def register(request):
+   return render(request, "register.html")
 
-
+## FOR DEBUGGING PAGES
 
 ####GAMES METHODSa
 
