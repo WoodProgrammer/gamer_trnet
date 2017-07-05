@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+<script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+</head>
+<script>
+	function displayResult()
+        {
+        	var ad = document.getElementById("ekle").name;
+    		var ucret = document.getElementById("ekle").getAttribute("value");
+            document.getElementById("myTable").insertRow(-1).innerHTML = '<td>'+ ad +'</td><td>'+ ucret +'</td>';
+        }
+</script>
+<body>
+
+<div data-role="page" id="pageone">
+
+  	<div data-role="header" id="ps">
+  		<h1>Welcome To My Homepage</h1>
+    		<a href="#page2" id="shp" class="ui-btn ui-shadow ui-corner-all ui-icon-shop ui-btn-icon-right ui-btn-icon-notext">Search</a>
+	</div>
+
+  	<div data-role="main" class="ui-content" id="m1">
+    	<button type="button" id="ekle" name="urunAdı" value="urunucreti" onclick="displayResult()" class="ui-btn ui-btn-inline ui-mini">Sepete Ekle</button>
+        <table data-role="table" data-mode="columntoggle" class="ui-responsive ui-shadow" id="myTable">
+        	<thead>
+        		<tr>
+          			<th>Product Name</th>
+          			<th>Product Fee</th>
+        		</tr>
+      		</thead>
+        </table>
+	</div>
+</div>
+
+<div data-role="page" id="page2">
+  	<div data-role="header" id="ps">
+  		<h1>Welcome To Shop Page</h1>
+        <a href="#pageone" id="shp" class="ui-btn ui-shadow ui-corner-all ui-icon-arrow-l ui-btn-icon-notext">Search</a>
+	</div>
+
+  	<div data-role="main" class="ui-content">
+
+	</div>
+</div>
+
+</form>
+</body>
+</html>
