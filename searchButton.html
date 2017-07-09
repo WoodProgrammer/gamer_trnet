@@ -11,9 +11,10 @@
         $("p").toggle();
     });
 });
+
 </script>
 <script>
-	
+
 </script>
 </head>
 <body>
@@ -23,7 +24,7 @@
     <a href="#" class="ui-btn ui-shadow ui-corner-all ui-icon-search ui-btn-icon-notext"></a>
 </div>
 
-<form id="myForm" method="post" action="games"> 
+<form id="myForm" method="post" action="{% url 'epinmaiin:search' %}">
 	<p><input type="search" name="search" placeholder="Enter The Name Of The Game"></input></p>
 </form>
 </body>
